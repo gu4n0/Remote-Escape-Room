@@ -1,2 +1,2 @@
-# Resmote-Escape-Room
+# Remote-Escape-Room
 Escape Room
