@@ -1,0 +1,19 @@
+<head>
+<link rel="stylesheet" href="style.css" media="all">
+<script type="text/javascript">
+function Geheim () {
+  var Passwort = "2fC7x";
+  var Eingabe = window.prompt("System override Password", "");
+  if (Eingabe == Passwort) {
+    document.getElementById ("hidden").style.display = "block";
+    alert("Access granted!");
+  } else {
+			alert("Access denied!")
+			location.href = "https://bit.ly/3eNAKsf";
+  }
+}
+</script>
+</head><body onload="Geheim()">
+<div style="display:none" id="hidden">
+<img src="Bilder/Schaltplan Alarmanlage.jpg" alt="Schaltplan">
+</div>

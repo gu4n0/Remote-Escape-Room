@@ -1,0 +1,88 @@
+#wrapper {
+	width: 800px;
+	margin-right: auto;
+	margin-left: 110px;
+	margin-top: 50px;
+
+
+}
+
+#wrapper img{
+	margin-right: auto;
+	margin-left: auto;
+	
+
+}
+
+body	{
+	background-image: url("Bilder/Haus des Geldes_ohne text.jpg");
+	background-size: cover;
+	
+		}
+
+
+}
+header {
+	margin-top: 100px;
+	height: 0px;
+	width: 1000px;
+	
+}
+a img{
+	margin-left: 815px;
+	margin-top: 45px;
+	}
+
+section {
+ 
+}
+
+li {
+ display: inline;	
+  float: Left;
+  margin-right: auto;
+  margin-left:auto;
+  
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: left;
+  padding: 20px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: red;
+}
+
+video {
+	margin-left:445px;
+	margin-top: 10px;
+	
+} 
+
+aside {
+list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+
+footer {
+	height:50px;
+	clear: both;
+}
+
+#maze_container{
+    border: 1px solid red;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#maze{
+	width: 800px
+	height: 500px
+}
