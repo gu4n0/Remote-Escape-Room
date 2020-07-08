@@ -1,0 +1,128 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+		<link rel="stylesheet" href="style2.css" media="all">
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Place favicon.ico in the root directory -->
+                <script type="text/javascript">
+				
+function Geheim () {
+  var Passwort = "BELLA CIAO!";
+  var Eingabe = window.prompt("System override Password", "");
+  if (Eingabe == Passwort) {
+    document.getElementById ("hidden").style.display = "block";
+    alert("Access granted!");
+  } else {
+			alert("Access denied!")
+			location.href = "../index.html";
+  }
+}
+
+          function execute(commandName, index = 0) {
+            var signalNames = commands[commandName];
+            var signalName = signalNames[index];
+            var signal = signals[signalName];
+            if (signal) {
+              request(signalToString(signal));
+            } else {
+              throw "Now signal with name:" + signalName;
+            }
+            if (index < (signalNames.length - 1)) {
+              setTimeout(function() { execute(commandName, index + 1);  }, 1000);
+            }
+          }
+
+          function signalToString(signal) {
+            var params = "timings=";
+            for (var i = 0; i < signal.length; i++) {
+              params += signal[i];
+              if ( i < (signal.length - 1)) params += ',';
+            }
+            return params;
+          }
+        
+          function request(data) {
+            var request = new XMLHttpRequest();
+            request.open('POST', 'http://' + host  + '/play', true);
+            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+            request.send(data);
+          }
+
+          function record(tries) {
+            var label = document.getElementById('recorded');
+            label.innerHTML = 'Press button on remote now';
+            var request = new XMLHttpRequest();
+            request.open('GET', 'http://' + host  + '/record', true);
+            request.send();
+            request.onload = function() {
+              if (request.status >= 200 && request.status < 400) {
+                // Success!
+                var resp = request.responseText;
+                if (resp == 'empty' && tries > 0) {
+                  console.log("Empty result retrying in a few seconds");
+                  setTimeout(function() { record(tries - 1);  }, 2000);
+                } else {
+                  console.log("RESP:", resp);
+                  var rx = /{([^}]+)}/;
+                  label.innerHTML = '[' + rx.exec(resp)[1] + ']'; 
+                }
+              } else {
+                // We reached our target server, but it returned an error
+
+              }
+            };
+          }
+
+          function init() {
+            var buttonsContainer = document.getElementById('buttons');
+            var template = buttonsContainer.children[0];
+            for (var key in commands) {
+              var newBtn = template.cloneNode(true);
+              var label = newBtn.getElementsByClassName('label')[0];
+              var clickTarget = newBtn.getElementsByClassName('click-target')[0];
+
+              label.innerHTML = key;
+              clickTarget.setAttribute("onclick", 'execute("' + key + '")');
+              buttonsContainer.appendChild(newBtn);
+            }
+            template.remove();
+          }
+
+          var signals = {
+            "rechts": [8964, 4434, 614, 500, 616, 500, 616, 500, 616, 500, 614, 500, 616, 498, 616, 1662, 616, 500, 616, 1662, 616, 500, 614, 1664, 616, 500, 614, 1666, 616, 498, 616, 1664, 616, 500, 616, 498, 616, 1662, 616, 500, 614, 500, 616, 498, 616, 1662, 618, 500, 616, 498, 616, 1664, 616, 500, 616, 1662, 616, 1662, 616, 1664, 616, 498, 616, 1662, 618, 1662, 616],
+			"links": [8964, 4432, 616, 500, 614, 498, 618, 498, 616, 498, 616, 498, 616, 500, 616, 1662, 618, 500, 616, 1662, 618, 500, 616, 1662, 616, 498, 616, 1664, 616, 498, 618, 1662, 616, 500, 616, 498, 616, 500, 616, 1662, 616, 1664, 616, 498, 616, 500, 616, 1662, 618, 1662, 616, 1662, 618, 1664, 616, 498, 618, 498, 616, 1662, 618, 1662, 618, 496, 618, 498, 616],
+			"an/aus": [8968, 4430, 618, 500, 616, 500, 618, 500, 616, 500, 616, 500, 616, 500, 616, 1662, 618, 500, 616, 1662, 618, 498, 616, 1664, 616, 500, 616, 1662, 618, 498, 618, 1662, 616, 500, 616, 500, 614, 498, 618, 1664, 616, 500, 614, 502, 614, 500, 616, 1662, 618, 498, 616, 1662, 618, 1664, 616, 498, 618, 1662, 616, 1664, 618, 1664, 618, 498, 616, 1662, 616],
+		
+          }
+          var commands = {
+            "Start/Stop": ["an/aus"],
+			"&#9664;": ["links"],
+			"&#9654;": ["rechts"]
+			
+          }
+          var host = '192.168.178.25';
+		  
+		  function start(){
+		  init()
+		  Geheim()
+		  }
+
+        </script>
+    </head>
+    <body onload="start()">
+	<div style="display:none" id="hidden">
+        <p>robot hacked!!!</p>
+        <ul id="buttons">
+          <li>
+            <button onclick="execute('...')" class="click-target label">COMMAND NAME</button>
+          </li>
+        </ul>
+        <button onclick="record(5)">Record</button>
+        <p id="recorded"></p>
+    </body>
+</html>

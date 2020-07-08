@@ -1,0 +1,29 @@
+p{
+	font-size: 50px;
+	color: Red;
+	text-align: center;
+}
+body {
+	background-image: url("../Bilder/hack.jpg");
+}
+ul#buttons {
+	list-style-type: none;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+}
+
+ ul#buttons li {
+          width: 100%;
+          padding: 10px 10px;
+          box-sizing: border-box;
+		  text-align: center;
+		  
+ }
+ 
+		
+.label {
+   font-size: 32px;
+   background-color: green;
+}
+
