@@ -48,7 +48,7 @@ function Geheim () {
         
           function request(data) {
             var request = new XMLHttpRequest();
-            request.open('POST', 'http://' + host  + '/play', true);
+            request.open('POST', 'https://' + host  + '/play', true);
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
             request.send(data);
           }
