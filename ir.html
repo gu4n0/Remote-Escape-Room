@@ -48,7 +48,7 @@ function Geheim () {
         
           function request(data) {
             var request = new XMLHttpRequest();
-            request.open('POST', 'https://' + host  + '/play', true);
+            request.open('POST', 'http://' + host  + '/play', true);
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
             request.send(data);
           }
@@ -57,7 +57,7 @@ function Geheim () {
             var label = document.getElementById('recorded');
             label.innerHTML = 'Press button on remote now';
             var request = new XMLHttpRequest();
-            request.open('GET', 'https://' + host  + '/record', true);
+            request.open('GET', 'http://' + host  + '/record', true);
             request.send();
             request.onload = function() {
               if (request.status >= 200 && request.status < 400) {
