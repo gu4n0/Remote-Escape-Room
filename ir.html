@@ -57,7 +57,7 @@ function Geheim () {
             var label = document.getElementById('recorded');
             label.innerHTML = 'Press button on remote now';
             var request = new XMLHttpRequest();
-            request.open('GET', 'http://' + host  + '/record', true);
+            request.open('GET', 'https://' + host  + '/record', true);
             request.send();
             request.onload = function() {
               if (request.status >= 200 && request.status < 400) {
