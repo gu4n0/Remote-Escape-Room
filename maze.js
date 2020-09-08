@@ -73,7 +73,7 @@ Mazing.prototype.heroWins = function() {
   this.mazeScore.classList.remove("has-key");
   this.maze[this.heroPos].classList.remove("door");
   this.heroScore += 50;
-  this.gameOver("");
+  this.gameOver("BELLA CIAO!");
 };
 
 Mazing.prototype.tryMoveHero = function(pos) {
