@@ -48,7 +48,7 @@ function Geheim () {
         
           function request(data) {
             var request = new XMLHttpRequest();
-            request.open('POST', 'https://' + host  + '/play', true);
+            request.open('POST', 'http://' + host  + '/play', true);
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
             request.send(data);
           }
@@ -105,7 +105,7 @@ function Geheim () {
 			"&#9654;": ["rechts"]
 			
           }
-          var host = '89.247.205.197';
+          var host = '192.168.178.25';
 		  
 		  function start(){
 		  init()
