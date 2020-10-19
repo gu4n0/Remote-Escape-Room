@@ -1,9 +1,11 @@
 #wrapper {
-	width: 800px;
-	margin-right: auto;
-	margin-left: 110px;
-	margin-top: 50px;
-
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	width: auto;
+	min-height: 100%;
+	margin: auto;
+	height: auto !important;
 
 }
 
@@ -14,8 +16,19 @@
 
 }
 
+img{
+	display: flex;
+	width: 15%;
+	align-items: center;
+	justify-content: center;
+	margin-right: auto;
+	margin-left: auto;
+
+}
+
 body	{
 	background-image: url("Haus des Geldes_ohne text.jpg");
+	
 	background-size: cover;
 	
 		}
@@ -25,34 +38,48 @@ body	{
 
 
 header {
-	margin-top: 100px;
-	height: 0px;
-	width: 1000px;
-	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: auto;
+	height: auto;
+	width: 100%;
+		
 }
-a img{
-	margin-left: 815px;
-	margin-top: 45px;
-	}
 
-section {
- 
+ul {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 30px;
+	height: auto;
+	width: auto;
 }
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: auto;
+	height: auto;
+	width: auto;
+}
+
 
 li {
- display: inline;	
-  float: Left;
+ display: flex;	
+   float: left;
   margin-right: auto;
   margin-left:auto;
   
 }
 
 li a {
-  display: block;
+  display: flex;
   color: white;
-  text-align: left;
+  text-align: center;
   padding: 20px;
   text-decoration: none;
+  
 }
 
 li a:hover {
@@ -60,8 +87,12 @@ li a:hover {
 }
 
 video {
-	margin-left:445px;
-	margin-top: 10px;
+	display: flex;
+	width: 85%;
+	align-items: center;
+	justify-content: center;
+	margin-right: auto;
+	margin-left: auto;
 	
 } 
 
@@ -76,6 +107,7 @@ list-style-type: none;
 footer {
 	color: white;
 	float: left;
+	min-height: 100%;
 	
 	}
 
@@ -90,3 +122,14 @@ footer {
 	width: 800px
 	height: 500px
 }
+
+#hidden {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+	
+	
